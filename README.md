@@ -1,69 +1,50 @@
-# React + TypeScript + Vite
+# CrashSweeper 🚨💥
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src=".github/assets/techies-dota2.gif" alt="CrashSweeper Demo" width="100" />
 
-Currently, two official plugins are available:
+A Minesweeper game with a twist - it crashes either when you click on a mine, or when you visit at the wrong time of day! ¯\\_(ツ)_/¯
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Inspiration
 
-## Expanding the ESLint configuration
+1. **Classic Minesweeper**: Inspired by [nickarocho/minesweeper](https://github.com/nickarocho/minesweeper) - the classic game with the classic Windows '95 look
+2. **Dota 2 Minesweeper**: Also inspired by the [Dota 2 Minesweeper game](https://www.youtube.com/watch?v=Csmo4y1ufpU)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## The Twist
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Unlike traditional Minesweeper, this game has two ways to "crash":
+- **Click on a mine** - classic game over
+- **Visit at the wrong time** - the entire website crashes! (Perfect for testing monitoring tools)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Purpose of the Project
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Test BetterStack.com Integration**: Monitor website crashes and performance in real-time
+2. **Excuse to play with Terraform** ¯\\_(ツ)_/¯
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Frontend**: React + TypeScript + Vite
+- **Infrastructure**: Terraform + AWS S3
+- **Monitoring**: BetterStack.com (for crash detection)
+- **Deployment**: Static site hosted on AWS S3
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run locally: `npm run dev`
+4. Deploy to AWS: `terraform apply`
+
+## Game Rules
+
+- Click on cells to reveal them
+- Numbers show how many mines are adjacent
+- Use Shift+Click to flag potential mines
+- Don't click on mines... or visit at the wrong time! ⏰💥
+
+## Deployment
+
+The game is deployed as a static website on AWS S3 using Terraform. Check out the `main.tf` file for the infrastructure configuration.
+
+---
+
+*Built with ❤️ and a dash of chaos*
