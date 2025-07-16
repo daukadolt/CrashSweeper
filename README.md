@@ -1,4 +1,4 @@
-# CrashSweeper 🚨💥
+# CrashSweeper 🚨💥 [![Better Stack Badge](https://uptime.betterstack.com/status-badges/v3/monitor/21a9g.svg)](https://uptime.betterstack.com/?utm_source=status_badge)
 
 <img src=".github/assets/techies-dota2.gif" alt="CrashSweeper Demo" width="100" />
 
