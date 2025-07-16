@@ -1,17 +1,7 @@
 import Minesweeper from './components/Minesweeper'
 import './App.css'
-import { useEffect } from 'react'
-import { useCrash } from './components/CrashContext'
 
 function App() {
-  const { crashApp } = useCrash();
-
-  useEffect(() => {
-    const hour = new Date().getHours();
-    if (hour % 2 === 0) {
-      crashApp();
-    }
-  }, []);
 
   return (
     <>
