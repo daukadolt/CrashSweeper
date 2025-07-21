@@ -158,7 +158,8 @@ const Minesweeper: React.FC = () => {
       if (cell.isFlagged) return prevState;
 
       if (cell.isBomb) {
-        setTimeout(() => crashApp(), 0);
+        fetch('https://api.crashsweeper.amirdnur.dev/crash', { method: 'POST' })
+          .finally(() => setTimeout(() => crashApp(), 0));
         return prevState;
       }
 
