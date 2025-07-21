@@ -95,6 +95,12 @@ The project uses Terraform to deploy:
 
 ## Deployment
 
+After building the project, deploy your static site to S3 with:
+
+```sh
+aws s3 sync ./dist s3://crashsweeper.amirdnur.dev --delete
+```
+
 The game is deployed as a static website on AWS S3 using Terraform. Check out the `main.tf` file for the infrastructure configuration.
 
 ---
